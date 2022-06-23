@@ -95,7 +95,7 @@ public class DirectApkSoSource extends SoSource {
     if (classLoaderLdLibraryPath != null) {
       final String[] paths = classLoaderLdLibraryPath.split(":");
       for (final String path : paths) {
-        if (path.contains(apkName + ".apk!/")) {
+        if (path.contains(apkName + ".apk!/") && !path.contains(".test-")) {
           return path;
         }
       }
